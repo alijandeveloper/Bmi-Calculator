@@ -22,3 +22,11 @@ calculateButton.addEventListener("click", () => {
     resultDiv.textContent = BMI: ${bmi} - ${status};
     saveHistory(bmi, status);
 });
+
+resetButton.addEventListener("click", () => {
+    weightInput.value = "";
+    heightInput.value = "";
+    resultDiv.textContent = "";
+    historyList.innerHTML = "";
+    localStorage.removeItem("bmiHistory");
+});
