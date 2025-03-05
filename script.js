@@ -35,3 +35,21 @@ themeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     themeButton.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
 });
+
+function saveHistory(bmi, status) {
+    const entry = document.createElement("li");
+    entry.textContent = BMI: ${bmi} - ${status};
+    historyList.appendChild(entry);
+    let history = JSON.parse(localStorage.getItem("bmiHistory")) || [];
+    history.push({ bmi, status });
+    localStorage.setItem("bmiHistory", JSON.stringify(history));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    let history = JSON.parse(localStorage.getItem("bmiHistory")) || [];
+    history.forEach(({ bmi, status }) => {
+        const entry = document.createElement("li");
+        entry.textContent = BMI: ${bmi} - ${status};
+        historyList.appendChild(entry);
+    });
+});
