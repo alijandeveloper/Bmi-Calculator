@@ -30,3 +30,8 @@ resetButton.addEventListener("click", () => {
     historyList.innerHTML = "";
     localStorage.removeItem("bmiHistory");
 });
+
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    themeButton.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
