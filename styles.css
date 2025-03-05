@@ -1,3 +1,4 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #1e3c72, #2a5298);
@@ -8,6 +9,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .container {
     background: rgba(255, 255, 255, 0.2);
     padding: 20px;
@@ -83,4 +85,12 @@ li {
 
 .dark-mode .container {
     background: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode button {
+    background: #4caf50;
+}
+
+.dark-mode button:hover {
+    background: #388e3c;
 }
